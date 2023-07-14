@@ -12,6 +12,8 @@ This repo contains all the contracts used in DackieSwap.
 ## DackieSwap Links
 🦆 App: http://dackieswap.xyz
 
+🦆 Twitter: https://twitter.com/DackieSwap
+
 🦆 Zealy: http://zealy.io/c/dackieswap
 
 🦆 Galxe: http://galxe.com/Dackie
