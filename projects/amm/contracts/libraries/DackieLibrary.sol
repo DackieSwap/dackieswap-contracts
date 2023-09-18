@@ -29,7 +29,7 @@ library DackieLibrary {
                         hex"ff",
                         factory,
                         keccak256(abi.encodePacked(token0, token1)),
-                        hex"447579b54f79403d3f8a02bf40619bb39e6fa0bf16b74e503d90a9b108e3fd9a" // init code hash
+                        hex"aaaacde43ad77b69fcbcdc68ccb757c3c634ad20e330a951b4a267f1180c6520" // init code hash
                     )
                 )
             )
@@ -67,9 +67,9 @@ library DackieLibrary {
     ) internal pure returns (uint256 amountOut) {
         require(amountIn > 0, "DackieLibrary: INSUFFICIENT_INPUT_AMOUNT");
         require(reserveIn > 0 && reserveOut > 0, "DackieLibrary: INSUFFICIENT_LIQUIDITY");
-        uint256 amountInWithFee = amountIn.mul(997);
+        uint256 amountInWithFee = amountIn.mul(9975);
         uint256 numerator = amountInWithFee.mul(reserveOut);
-        uint256 denominator = reserveIn.mul(1000).add(amountInWithFee);
+        uint256 denominator = reserveIn.mul(10000).add(amountInWithFee);
         amountOut = numerator / denominator;
     }
 
@@ -81,8 +81,8 @@ library DackieLibrary {
     ) internal pure returns (uint256 amountIn) {
         require(amountOut > 0, "DackieLibrary: INSUFFICIENT_OUTPUT_AMOUNT");
         require(reserveIn > 0 && reserveOut > 0, "DackieLibrary: INSUFFICIENT_LIQUIDITY");
-        uint256 numerator = reserveIn.mul(amountOut).mul(1000);
-        uint256 denominator = reserveOut.sub(amountOut).mul(997);
+        uint256 numerator = reserveIn.mul(amountOut).mul(10000);
+        uint256 denominator = reserveOut.sub(amountOut).mul(9975);
         amountIn = (numerator / denominator).add(1);
     }
 
